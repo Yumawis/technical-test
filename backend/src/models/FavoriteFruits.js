@@ -4,7 +4,7 @@ const favoriteFruitsSchema = new mongoose.Schema(
   {
     fruitsId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
+      ref: "Fruits",
       required: true,
       unique: true,
     },

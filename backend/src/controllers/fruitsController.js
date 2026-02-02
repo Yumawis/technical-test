@@ -4,13 +4,13 @@ const registerFruit = async (req, res) => {
   try {
     const { name, description, photoBasde64 } = req.body;
 
-    const newProduct = new Product({
+    const newFruits = new Fruits({
       name,
       description,
       photoBasde64,
     });
 
-    const savedFruit = await newProduct.save();
+    const savedFruit = await newFruits.save();
 
     console.log("Fruta registrada:", savedFruit);
 
@@ -37,7 +37,6 @@ const registerFruit = async (req, res) => {
     return res.status(422).json(response);
   }
 };
-
 
 const getAllFruits = async (req, res) => {
   try {
