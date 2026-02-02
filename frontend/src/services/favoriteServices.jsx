@@ -2,7 +2,7 @@ import { baseApi } from "../store/baseApi";
 
 export const favoriteService = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    addFavoriteProduct: builder.mutation({
+    addFavoriteFruits: builder.mutation({
       query: ({ userId, fruitsId }) => ({
         url: `favorite/fruits/${userId}`,
         method: "PUT",

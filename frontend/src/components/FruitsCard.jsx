@@ -7,11 +7,11 @@ import { useAddFavoriteFruitsMutation } from "../services/favoriteServices";
 
 import { useEffect } from "react";
 
-const FruitsCard = ({ product, userId, sx = {} }) => {
+const FruitsCard = ({ fruits, userId, sx = {} }) => {
   const [addFavoriteFruits, { data, error, isSuccess, isError, isLoading }] =
     useAddFavoriteFruitsMutation();
 
-  const handleAddFavoriteProduct = () => {
+  const handleAddFavoriteFruits = () => {
     addFavoriteFruits({ userId, fruitsId: fruits?._id });
   };
 
@@ -70,12 +70,12 @@ const FruitsCard = ({ product, userId, sx = {} }) => {
           marginTop: "auto",
         }}
       >
-        {product?.isFavorite ? (
-          <IconButton onClick={handleAddFavoriteProduct}>
+        {fruits?.isFavorite ? (
+          <IconButton onClick={handleAddFavoriteFruits}>
             <FavoriteIcon sx={{ fill: "red" }} />
           </IconButton>
         ) : (
-          <IconButton onClick={handleAddFavoriteProduct}>
+          <IconButton onClick={handleAddFavoriteFruits}>
             <FavoriteBorderIcon />
           </IconButton>
         )}

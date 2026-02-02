@@ -6,12 +6,12 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const Products = () => {
+const Fruits = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [user, setUser] = useState({});
   const {
-    data: products,
+    data: fruits,
     isLoading,
     refetch,
   } = useGetAllFruitsQuery(user?.id, {
@@ -50,7 +50,7 @@ const Products = () => {
         }}
       >
         <Typography variant="h4" fontWeight={600}>
-          Productos
+          Frutas
         </Typography>
       </Box>
 
@@ -69,10 +69,10 @@ const Products = () => {
             justifyContent: "center",
           }}
         >
-          {products?.map((currentProduct, index) => (
-            <ProductCard
+          {fruits?.map((currentFruits, index) => (
+            <FruitsCard
               key={index}
-              product={currentProduct}
+              fruits={currentFruits}
               userId={user?.id}
             />
           ))}
@@ -82,4 +82,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Fruits;
